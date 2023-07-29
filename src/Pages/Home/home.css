@@ -1,0 +1,63 @@
+.offer-bloc {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto auto;
+  width: 1280px;
+}
+
+/* .offer-container {
+  cursor: pointer;
+  padding: 0 6px 16px;
+  width: 235px;
+} */
+
+.avatar img {
+  border-radius: 50%;
+  height: 25px;
+  height: 25px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.username {
+  color: #999;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.owner {
+  align-items: center;
+  display: flex;
+  padding: 10px;
+}
+
+.offer-image {
+  cursor: pointer;
+}
+
+.offer-image img {
+  height: 360px;
+  object-fit: cover;
+  width: 235px;
+}
+
+.price-size-brand {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+.price-size-brand .price {
+  font-size: 14px;
+  text-decoration: none;
+}
+.price-size-brand span {
+  color: #999;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 6px 16px;
+  width: 235px;
+}

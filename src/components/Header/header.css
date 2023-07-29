@@ -1,0 +1,198 @@
+header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 10px 0;
+  width: 1280px;
+  border: black solid 1px;
+  height: 100px;
+}
+
+.logo {
+  height: 40px;
+  width: 103px;
+}
+
+.logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.search-bar {
+  background-color: #f5f6f7;
+  border: none;
+  border-radius: 5px;
+  font-family: Maison Neue;
+  font-size: 16px;
+  height: 37px;
+  outline: none;
+  padding-left: 40px;
+  width: 590px;
+}
+
+.margin-top {
+  /* border: black 1px solid; */
+  margin-top: 25px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  height: 36px;
+}
+.style-right {
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.checkbox1 {
+  margin-right: 25px;
+  font-size: 12px;
+  width: 42px;
+  height: 20px;
+}
+
+.checkbox1 input {
+  cursor: pointer;
+  font-size: 12px;
+  outline: none;
+  display: none;
+  z-index: auto;
+}
+
+.wrapper {
+  align-items: center;
+  background-color: #2cb1ba;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  height: 20px;
+  outline: none;
+  width: 42px;
+}
+.knob {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #666;
+  border-radius: 100%;
+  font-weight: 700;
+  height: 16px;
+  left: 0;
+  position: relative;
+  transition: left 0.1s ease-in-out 0s;
+  width: 16px;
+}
+
+.transform {
+  transform: scale(1);
+  cursor: inherit;
+  height: 36px;
+  display: flex;
+  width: 50%;
+}
+
+.height {
+  height: 5px;
+  width: 100%;
+  border-radius: 4px;
+  background: linear-gradient(
+    to right,
+    rgb(204, 204, 204) 0%,
+    rgb(204, 204, 204) 2%,
+    rgb(44, 177, 186) 2%,
+    rgb(44, 177, 186) 20%,
+    rgb(204, 204, 204) 20%,
+    rgb(204, 204, 204) 100%
+  );
+  align-self: center;
+}
+
+.position1 {
+  position: absolute;
+  z-index: 0;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: rgb(44, 177, 186);
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-2.11333px, -5.93333px);
+}
+
+.position1 .style {
+  position: absolute;
+  top: -28px;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-family: Maison Neue;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: rgb(44, 177, 186);
+}
+
+.position2 {
+  position: absolute;
+  z-index: 1;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: rgb(44, 177, 186);
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(54.7667px, -5.93333px);
+}
+
+.position2 .style {
+  position: absolute;
+  top: -28px;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-family: Maison Neue;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: rgb(44, 177, 186);
+}
+
+.btn-block {
+  display: flex;
+  gap: 20px;
+  font: inherit;
+  width: 250px;
+  height: 30px;
+}
+
+button {
+  background-color: #fff;
+  color: #2cb1ba;
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  font-family: Maison Neue;
+  font-size: 12px;
+  height: 30px;
+  outline: none;
+  width: 115px;
+  cursor: pointer;
+}
+.button .signup {
+  margin-right: 20px;
+}
