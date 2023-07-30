@@ -15,7 +15,7 @@ export default function Signup({ setUserToken }) {
 
   const navigate = useNavigate();
 
-  const handleSbumit = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!email || !password || !username) {
@@ -24,7 +24,12 @@ export default function Signup({ setUserToken }) {
       try {
         const { data } = await axios.post(
           "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-          { email, username, password, newsletter }
+          {
+            email,
+            username,
+            password,
+            newsletter,
+          }
         );
 
         Cookies.set("token", data.token);
@@ -42,7 +47,7 @@ export default function Signup({ setUserToken }) {
       <div className="container">
         <h1>S'inscrire</h1>
 
-        <form onSubmit={handleSbumit}>
+        <form onSubmit={handleSubmit}>
           <div className="input">
             <input
               type="text"

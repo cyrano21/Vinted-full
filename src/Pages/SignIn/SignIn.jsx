@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function SignIn({ setUserToken }) {
   const [email, setEmail] = useState("");
@@ -9,6 +9,7 @@ export default function SignIn({ setUserToken }) {
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -26,13 +27,15 @@ export default function SignIn({ setUserToken }) {
         );
 
         console.log(data.token);
-        // enregistrer le cookie
+
         Cookies.set("token", data.token);
 
-        // changer la valeur du state
         setUserToken(data.token);
-        // naviguer vers la page d'accueil
-        navigate("/");
+        if (location.state) {
+          navigate(location.state.from);
+        } else {
+          navigate("/");
+        }
       } catch (error) {
         console.log("catch>>", error);
       }

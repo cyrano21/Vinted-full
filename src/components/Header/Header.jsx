@@ -3,7 +3,7 @@ import logo from "../../assets/images/Vinted_logo.png";
 
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header({ userToken, setUserToken }) {
   return (
     <header>
       <div className="logo">
@@ -46,13 +46,26 @@ export default function Header() {
       </div>
 
       <div className="btn-block">
-        <Link to="/signup">
-          <button>S'inscrire</button>
-        </Link>
+        {userToken ? (
+          <button
+            onClick={() => {
+              setUserToken("");
+            }}
+            className="deconnect"
+          >
+            Se déconnecter
+          </button>
+        ) : (
+          <>
+            <Link to="/signup">
+              <button>S'inscrire</button>
+            </Link>
 
-        <Link to="/signin">
-          <button>Se connecter</button>
-        </Link>
+            <Link to="/signin">
+              <button>Se connecter</button>
+            </Link>
+          </>
+        )}
       </div>
       <div>
         <Link to="/publish">

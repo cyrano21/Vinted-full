@@ -179,6 +179,17 @@ header {
   height: 30px;
 }
 
+.btn-block .deconnect {
+  background-color: #c2175b;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-family: Maison Neue;
+  font-size: 12px;
+  height: 30px;
+  outline: none;
+}
+
 button {
   background-color: #fff;
   color: #2cb1ba;
