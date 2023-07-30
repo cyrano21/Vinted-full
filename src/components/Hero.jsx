@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
-import banner from "../assets/images/hero-banner.jpg";
+import banner from "../assets/images/hero-image.jpg";
 // import whiteCut from "../assets/images/banner-cut.svg";
 import "../components/hero.css";
 
 const Hero = () => {
   const containerStyle = {
     backgroundImage: `url(${banner})`,
-    width: "100%",
+    backgroundPosition: "50%",
+    backgroundSize: "cover",
     height: "455px",
     position: "relative",
+    width: "100%",
   };
 
   return (

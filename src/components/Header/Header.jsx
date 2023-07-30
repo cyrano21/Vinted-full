@@ -7,7 +7,9 @@ export default function Header() {
   return (
     <header>
       <div className="logo">
-        <img src={logo} alt="" />
+        <Link to="/">
+          <img src={logo} alt="" />
+        </Link>
       </div>
 
       <div className="search-container">
@@ -53,7 +55,9 @@ export default function Header() {
         </Link>
       </div>
       <div>
-        <button>Vends tes articles</button>
+        <Link to="/publish">
+          <button className="sell">Vends tes articles</button>
+        </Link>
       </div>
     </header>
   );

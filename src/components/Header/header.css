@@ -5,8 +5,6 @@ header {
   margin: auto;
   padding: 10px 0;
   width: 1280px;
-  border: black solid 1px;
-  height: 100px;
 }
 
 .logo {
@@ -195,4 +193,9 @@ button {
 }
 .button .signup {
   margin-right: 20px;
+}
+
+div .sell {
+  background-color: rgb(44, 177, 186);
+  color: white;
 }
