@@ -1,9 +1,12 @@
 import "../Header/header.css";
 import logo from "../../assets/images/Vinted_logo.png";
-
 import { Link } from "react-router-dom";
+import OffersPage from "../OffersPage/OffersPage";
+import { useLocation } from "react-router-dom";
 
 export default function Header({ userToken, setUserToken }) {
+  const location = useLocation();
+
   return (
     <header>
       <div className="logo">
@@ -15,34 +18,11 @@ export default function Header({ userToken, setUserToken }) {
       <div className="search-container">
         <input
           type="search"
-          name=""
-          id=""
           placeholder="Recherche des articles"
           className="search-bar"
         />
 
-        <div className="margin-top">
-          <span className="style-right">trier par prix :</span>
-          <span className="checkbox1">
-            <input type="checkbox" name="price" id="" />
-            <div className="wrapper">
-              <div className="knob">
-                <span>⇡</span>
-              </div>
-            </div>
-          </span>
-          <span className="style-right">Prix entre :</span>
-          <div className="transform">
-            <div className="height">
-              <div className="position1">
-                <div className="style">10$</div>
-              </div>
-              <div className="position2">
-                <div className="style">100$</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {(location.path = "/" && <OffersPage />)}
       </div>
 
       <div className="btn-block">

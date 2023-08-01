@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useNavigate, useLocation } from "react-router-dom";
+import "../SignIn/signIn.css";
 
 export default function SignIn({ setUserToken }) {
   const [email, setEmail] = useState("");
@@ -44,10 +45,10 @@ export default function SignIn({ setUserToken }) {
 
   return (
     <main>
-      <div className="container">
-        <h1>Se connecter</h1>
+      <div className="signin-container">
+        <h2>Se connecter</h2>
 
-        <form onSubmit={handleSubmit}>
+        <form className="signin-form" onSubmit={handleSubmit}>
           <input
             type="email"
             name="email"
@@ -73,8 +74,7 @@ export default function SignIn({ setUserToken }) {
               setPassword(event.target.value);
             }}
           />
-
-          <button>Se connecter</button>
+          <button type="submit">Se connecter</button>
 
           {errorMessage && <p>{errorMessage}</p>}
         </form>

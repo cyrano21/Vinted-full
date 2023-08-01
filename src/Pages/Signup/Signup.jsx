@@ -44,72 +44,71 @@ export default function Signup({ setUserToken }) {
 
   return (
     <main>
-      <div className="container">
-        <h1>S'inscrire</h1>
+      <div className="signup-container">
+        <h2>S'inscrire</h2>
 
-        <form onSubmit={handleSubmit}>
-          <div className="input">
-            <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Nom d'utilisateur"
-              value={username}
-              onChange={(event) => {
-                setErrorMessage("");
-                setUsername(event.target.value);
-              }}
-            />
+        <form className="signup-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Nom d'utilisateur"
+            value={username}
+            onChange={(event) => {
+              setErrorMessage("");
+              setUsername(event.target.value);
+            }}
+          />
 
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              value={email}
-              onChange={(event) => {
-                setErrorMessage("");
-                setEmail(event.target.value);
-              }}
-            />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            value={email}
+            onChange={(event) => {
+              setErrorMessage("");
+              setEmail(event.target.value);
+            }}
+          />
 
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Mot de passe"
-              value={password}
-              onChange={(event) => {
-                setErrorMessage("");
-                setPassword(event.target.value);
-              }}
-            />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Mot de passe"
+            value={password}
+            onChange={(event) => {
+              setErrorMessage("");
+              setPassword(event.target.value);
+            }}
+          />
+
+          <div className="checkbox-container">
+            <div>
+              <input
+                type="checkbox"
+                name="newsletter"
+                id="newsletter"
+                checked={newsletter}
+                onChange={(event) => {
+                  setNewsletter(!newsletter);
+                }}
+              />
+
+              <span>S'incrire à notre newsletter</span>
+            </div>
+
+            <p>
+              En m'inscrivant je confirme avoir lu et accepté les Termes &
+              Conditions et Politique de Confidentialité de Vinted. Je confirme
+              avoir au moins 18 ans.
+            </p>
           </div>
 
-          <div className="checkbox">
-            <input
-              type="checkbox"
-              name="newsletter"
-              id="newsletter"
-              checked={newsletter}
-              onChange={(event) => {
-                setNewsletter(!newsletter);
-              }}
-            />
-            <label htmlFor="newsletter"></label>
+          <button type="submit">S'inscrire</button>
 
-            <p>S'incrire à notre newsletter</p>
-          </div>
-          <p>
-            texopjvopjj jnfpoqjopjpgo ,nfkjpojgj oljfopfujgrgr rorfgjroguguuj
-            ogoàtgiuruiràtrtj. rèoerfjkldqqfhdj, dfzijhoih
-          </p>
-
-          <button>S'inscrire</button>
-
-          <p>
-            tu as deja un compte , <Link to="/signin">Connecte-toi!</Link>
-          </p>
+          <Link to="/signin"> tu as deja un compte ,Connecte-toi!</Link>
 
           {errorMessage && <p>{errorMessage}</p>}
         </form>

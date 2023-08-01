@@ -5,6 +5,7 @@ import Hero from "../../components/Hero";
 import { Link } from "react-router-dom";
 import Offer from "../Offer/Offer";
 import "../Home/home.css";
+import Header from "../../components/Header/Header";
 
 export default function Home() {
   const [offersList, setOffersList] = useState([]);

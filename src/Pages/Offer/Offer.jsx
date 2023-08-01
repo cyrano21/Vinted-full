@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -70,7 +70,16 @@ export default function Offer() {
             </div>
           </div>
 
-          <button>Acheter</button>
+          <Link
+            to="/payment"
+            state={{
+              amount: offerInfos.product_price,
+              title: offerInfos.product_name,
+              ownerID: offerInfos.owner._id,
+            }}
+          >
+            Acheter
+          </Link>
         </div>
       </div>
     </main>

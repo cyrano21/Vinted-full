@@ -9,13 +9,18 @@ import SignIn from "./Pages/SignIn/SignIn";
 import Publish from "./Pages/Publish/Publish";
 import { useState } from "react";
 import Cookies from "js-cookie";
+import Payment from "./Pages/Payment/Payment";
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("token") || "");
 
   return (
     <Router>
-      <Header userToken={userToken} setUserToken={setUserToken} />
+      <Header
+        showFilterBar={true}
+        userToken={userToken}
+        setUserToken={setUserToken}
+      />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -30,6 +35,7 @@ function App() {
           element={<SignIn setUserToken={setUserToken} />}
         />
         <Route path="/publish" element={<Publish token={userToken} />} />
+        <Route path="/payment" element={<Payment token={userToken} />} />
       </Routes>
     </Router>
   );
