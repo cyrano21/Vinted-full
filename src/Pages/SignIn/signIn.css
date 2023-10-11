@@ -1,0 +1,35 @@
+.signin-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.signin-form {
+  margin: auto;
+  width: 275px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.signin-form input {
+  width: 275px;
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.signin-form button {
+  background-color: #2cb1ba;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  height: 45px;
+  margin-top: 20px;
+  outline: none;
+  width: 267px;
+}
