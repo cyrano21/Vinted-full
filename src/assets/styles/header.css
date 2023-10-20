@@ -1,14 +1,12 @@
-/* HEADER ******************** */
-
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1280px;
+  width: 1400px;
   margin: auto;
   padding: 10px 0;
-  background-color: #fff; /* Couleur de fond du header */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-container > div:first-child {
@@ -16,21 +14,23 @@
 }
 
 .header-logo {
-  height: 30px;
+  height: 40px;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .search-container {
   position: relative;
-  flex-grow: 1; /* Permet à la barre de recherche de prendre autant d'espace que possible */
+  flex-grow: 1;
 }
 
 .search-input {
-  width: 590px;
+  width: 50%;
   padding-left: 40px;
   background-color: #f5f6f7;
   border-radius: 5px;
-  height: 37px;
+  height: 30px;
+  margin-bottom: 10px;
   border: none;
   outline: none;
   font-family: "Maison Neue";
@@ -44,8 +44,8 @@
 
 .search-input-icon {
   position: absolute;
-  left: 7px;
-  top: 12px;
+  left: 9px;
+  top: 17px;
   color: #bbbbbb;
 }
 
@@ -93,13 +93,13 @@
   font-size: 12px;
   outline: none;
   cursor: pointer;
-  margin-left: 20px; /* Espace entre le bouton et les autres éléments */
-  padding: 8px 16px; /* Ajoutez de la marge à l'intérieur du bouton */
-  text-decoration: none; /* Supprimez le soulignement du texte du lien */
+  margin-left: 30px;
+  padding: 8px 16px;
+  text-decoration: none;
   transition: background-color 0.3s ease;
+  gap: 10px;
 }
 
 .dashboard-button:hover {
   background-color: #1e899b;
-  /* Ajoutez d'autres styles au survol si nécessaire */
 }
