@@ -49,12 +49,13 @@ form textarea {
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: gray;
+  background-color: #f5f6f7;
 }
 
 /* Styles pour le champ de sélection d'image */
 form input[type="file"] {
   margin-bottom: 15px;
+  color: #cbcccd;
 }
 
 /* Styles pour le bouton de soumission */
