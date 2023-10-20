@@ -17,6 +17,14 @@ const Home = ({ fetchRangeValues, search, sortPrice }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const response = await axios.get(
+          `https://site--backend-vinted--cl5kfjmsrksj.code.run/offers?priceMin=${
+            fetchRangeValues[0]
+          }&priceMax=${fetchRangeValues[1]}&sort=${
+            sortPrice ? "price-desc" : "price-asc"
+          }&title=${search}`
+        );
+
         // const response = await axios.get(
         //   `https://site--backend-vinted--cl5kfjmsrksj.code.run/offers?priceMin=${
         //     fetchRangeValues[0]
@@ -24,14 +32,6 @@ const Home = ({ fetchRangeValues, search, sortPrice }) => {
         //     sortPrice ? "price-desc" : "price-asc"
         //   }&title=${search}`
         // );
-
-        const response = await axios.get(
-          `http://localhost:4000/offers?priceMin=${
-            fetchRangeValues[0]
-          }&priceMax=${fetchRangeValues[1]}&sort=${
-            sortPrice ? "price-desc" : "price-asc"
-          }&title=${search}`
-        );
 
         console.log(response.data);
 

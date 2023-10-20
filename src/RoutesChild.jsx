@@ -55,9 +55,12 @@ const RoutesChild = ({
           path="/dashboard"
           element={<Dashboard token={token} />} // Passez le jeton à la page Dashboard
         />
-        <Route path="/signup" element={<Signup setUser={setUserToken} />} />
-        <Route path="/login" element={<Login setUser={setUserToken} />} />
-        <Route path="/publish" element={<Publish setUser={setUserToken} />} />
+        <Route
+          path="/signup"
+          element={<Signup setUserToken={setUserToken} />}
+        />
+        <Route path="/login" element={<Login setUserToken={setUserToken} />} />
+        <Route path="/publish" element={<Publish token={token} />} />
         <Route path="/offer/:id" element={<Offer />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/update/offer/:id" element={<UpdateOffer />} />

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
-const Signup = ({ setUser }) => {
+const Signup = ({ setUserToken }) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -31,18 +31,18 @@ const Signup = ({ setUser }) => {
     }
 
     try {
-      // const response = await axios.post(
-      //   `https://site--backend-vinted--cl5kfjmsrksj.code.run/user/signup`,
-      //   formData
-      // );
-
       const response = await axios.post(
-        `http://localhost:4000/user/signup`,
+        `https://site--backend-vinted--cl5kfjmsrksj.code.run/user/signup`,
         formData
       );
 
+      // const response = await axios.post(
+      //   `http://localhost:4000/user/signup`,
+      //   formData
+      // );
+
       if (response.data.token) {
-        setUser(response.data.token);
+        setUserToken(response.data.token);
         navigate("/");
       } else {
         alert("Une erreur est survenue, veuillez réssayer.");

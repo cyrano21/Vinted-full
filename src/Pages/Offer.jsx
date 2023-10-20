@@ -22,13 +22,13 @@ const Offer = () => {
   useEffect(() => {
     try {
       const fetchData = async () => {
-        // const response = await axios.get(
-        //   `https://site--backend-vinted--cl5kfjmsrksj.code.run/offer/${params.id}`
-        // );
-
         const response = await axios.get(
-          `http://localhost:4000/offer/${params.id}`
+          `https://site--backend-vinted--cl5kfjmsrksj.code.run/offer/${params.id}`
         );
+
+        // const response = await axios.get(
+        //   `http://localhost:4000/offer/${params.id}`
+        // );
 
         console.log("response===>", response);
 
