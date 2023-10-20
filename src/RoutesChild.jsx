@@ -12,7 +12,7 @@ import UpdateOffer from "./Pages/UpdateOffer";
 import DeleteOffer from "./Pages/DeleteOffer";
 
 const RoutesChild = ({
-  setUser,
+  setUserToken,
   token,
   fetchRangeValues,
   sortPrice,
@@ -55,9 +55,9 @@ const RoutesChild = ({
           path="/dashboard"
           element={<Dashboard token={token} />} // Passez le jeton à la page Dashboard
         />
-        <Route path="/signup" element={<Signup setUser={setUser} />} />
-        <Route path="/login" element={<Login setUser={setUser} />} />
-        <Route path="/publish" element={<Publish token={token} />} />
+        <Route path="/signup" element={<Signup setUser={setUserToken} />} />
+        <Route path="/login" element={<Login setUser={setUserToken} />} />
+        <Route path="/publish" element={<Publish setUser={setUserToken} />} />
         <Route path="/offer/:id" element={<Offer />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/update/offer/:id" element={<UpdateOffer />} />

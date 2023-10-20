@@ -16,27 +16,31 @@ const Login = ({ setUser }) => {
   const fromPublish = location.state?.fromPublish ? true : null;
 
   const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsLoading(true);
+
     try {
-      event.preventDefault();
-      setIsLoading(true);
-      const response = await axios.post(
-        `https://site--backend-vinted--cl5kfjmsrksj.code.run/user/login`,
-        {
-          email: email,
-          password: password,
-        }
-      );
+      const response = await axios.post(`http://localhost:4000/user/login`, {
+        email,
+        password,
+      });
+
+      console.log("response===>", response);
+
       if (response.data.token) {
-        setUser(response.data.token);
+        setUser(response.data.token); // Assurez-vous que setUser est une fonction
         setIsLoading(false);
         navigate(fromPublish ? "/publish" : "/");
       } else {
-        alert("Une erreur est survenue, veuillez réssayer.");
+        alert("Une erreur est survenue, veuillez réessayer.");
       }
     } catch (error) {
-      if (error.response.status === 401 || error.response.status === 400) {
+      setIsLoading(false);
+      if (
+        error.response &&
+        (error.response.status === 401 || error.response.status === 400)
+      ) {
         setErrorMessage("Mauvais email et/ou mot de passe");
-        setIsLoading(false);
       }
       console.log(error.message);
     }

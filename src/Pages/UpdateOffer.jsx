@@ -44,8 +44,13 @@ const UpdateOffer = () => {
 
     try {
       // Envoyer les données au serveur à l'aide d'une requête Axios (ou autre)
+      //   const response = await axios.put(
+      //     `https://site--backend-vinted--cl5kfjmsrksj.code.run/offer/update/${params.id}`,
+      //     formDataToSend
+      //   );
+
       const response = await axios.put(
-        `https://site--backend-vinted--cl5kfjmsrksj.code.run/offer/update/${params.id}`,
+        `http://localhost:4000/offer/update/${params.id}`,
         formDataToSend
       );
 

@@ -34,8 +34,20 @@ const Publish = ({ token }) => {
       formData.append("city", city);
       formData.append("brand", selectedBrand);
 
+      // const response = await axios.post(
+      //   `https://site--backend-vinted--cl5kfjmsrksj.code.run/offer/publish`,
+      //   formData,
+      //   {
+      //     headers: {
+      //       Authorization: "Bearer " + token,
+      //       //send formData with axios make this headers EXPLICIT !
+      //       "Content-Type": "multipart/form-data",
+      //     },
+      //   }
+      // );
+
       const response = await axios.post(
-        `https://site--backend-vinted--cl5kfjmsrksj.code.run/offer/publish`,
+        `http://localhost:4000/offer/publish`,
         formData,
         {
           headers: {
@@ -45,6 +57,7 @@ const Publish = ({ token }) => {
           },
         }
       );
+
       // console.log(response.data);
       if (response.data._id) {
         // redirectoin vers l'offre
