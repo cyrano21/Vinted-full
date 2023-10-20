@@ -16,7 +16,7 @@ import React from "react";
 
 const Header = ({
   token,
-  setUser,
+  setUserToken,
   setFetchRangeValues,
   sortPrice,
   setSortPrice,
@@ -97,7 +97,7 @@ const Header = ({
           </Link>
           <button
             onClick={() => {
-              setUser(null);
+              setUserToken(null);
             }}
             className="button-logout"
           >
