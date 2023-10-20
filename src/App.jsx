@@ -1,42 +1,49 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Home from "./Pages/Home/Home";
-import Offer from "./Pages/Offer/Offer";
-import Header from "./components/Header/Header";
-import "./App.css";
-import Signup from "./Pages/Signup/Signup";
-import SignIn from "./Pages/SignIn/SignIn";
-import Publish from "./Pages/Publish/Publish";
 import { useState } from "react";
+import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
 import Cookies from "js-cookie";
-import Payment from "./Pages/Payment/Payment";
+
+import Header from "./components/Header";
+import RoutesChild from "./RoutesChild";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faSearch, faCheck, faRedo } from "@fortawesome/free-solid-svg-icons";
+library.add(faSearch, faCheck, faRedo);
 
 function App() {
-  const [userToken, setUserToken] = useState(Cookies.get("token") || "");
+  const [token, setToken] = useState(Cookies.get("token") || null);
+  const [sortPrice, setSortPrice] = useState(false);
+  const [fetchRangeValues, setFetchRangeValues] = useState([0, 10000]);
+  const [search, setSearch] = useState("");
+
+  const setUserToken = (newToken) => {
+    if (newToken) {
+      setToken(newToken);
+      Cookies.set("token", newToken);
+    } else {
+      setToken(null);
+      Cookies.remove("token");
+    }
+  };
 
   return (
     <Router>
       <Header
-        showFilterBar={true}
-        userToken={userToken}
         setUserToken={setUserToken}
+        token={token}
+        setFetchRangeValues={setFetchRangeValues}
+        fetchRangeValues={fetchRangeValues}
+        sortPrice={sortPrice}
+        setSortPrice={setSortPrice}
+        setSearch={setSearch}
       />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/offer/:id" element={<Offer />} />
-
-        <Route
-          path="/signup"
-          element={<Signup setUserToken={setUserToken} />}
-        />
-        <Route
-          path="/signin"
-          element={<SignIn setUserToken={setUserToken} />}
-        />
-        <Route path="/publish" element={<Publish token={userToken} />} />
-        <Route path="/payment" element={<Payment token={userToken} />} />
-      </Routes>
+      <RoutesChild
+        setUserToken={setUserToken}
+        token={token}
+        search={search}
+        fetchRangeValues={fetchRangeValues}
+        sortPrice={sortPrice}
+      />
     </Router>
   );
 }
