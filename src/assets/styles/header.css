@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1400px;
+  width: 1280px;
   margin: auto;
   padding: 10px 0;
   background-color: #fff;
@@ -16,16 +16,21 @@
 .header-logo {
   height: 40px;
   cursor: pointer;
-  margin-right: 20px;
 }
+
+/* .search-container {
+  position: relative;
+  flex-grow: 1;
+} */
 
 .search-container {
   position: relative;
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .search-input {
-  width: 50%;
+  width: 70%;
   padding-left: 40px;
   background-color: #f5f6f7;
   border-radius: 5px;
@@ -42,10 +47,22 @@
   font-size: 16px;
 }
 
+.search-input {
+  width: 590px;
+  padding-left: 40px;
+  background-color: #f5f6f7;
+  border-radius: 5px;
+  height: 37px;
+  border: none;
+  outline: none;
+  font-family: "Maison Neue";
+  font-size: 16px;
+}
+
 .search-input-icon {
   position: absolute;
-  left: 9px;
-  top: 17px;
+  left: 7px;
+  top: 12px;
   color: #bbbbbb;
 }
 
@@ -93,11 +110,10 @@
   font-size: 12px;
   outline: none;
   cursor: pointer;
-  margin-left: 30px;
+  margin-left: 20px;
   padding: 8px 16px;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  gap: 10px;
 }
 
 .dashboard-button:hover {
