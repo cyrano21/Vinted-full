@@ -6,6 +6,7 @@ import ResetUsers from "./ResetUsers";
 import { Link } from "react-router-dom";
 import "../assets/styles/header.css";
 import React from "react";
+import { useState } from "react";
 
 const Header = ({
   token,
@@ -16,6 +17,11 @@ const Header = ({
   setSearch,
 }) => {
   const navigate = useNavigate();
+  const [burgerActive, setBurgerActive] = useState(false);
+
+  const toggleBurgerMenu = () => {
+    setBurgerActive(!burgerActive);
+  };
 
   const handleNavigate = (path) => {
     navigate(path);
@@ -124,6 +130,14 @@ const Header = ({
       >
         Vends tes articles
       </button>
+      <div
+        className={`toggle-btn ${burgerActive ? "active" : ""}`}
+        onClick={toggleBurgerMenu}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   );
 };
