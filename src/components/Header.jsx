@@ -21,6 +21,10 @@ const Header = ({
     navigate(path);
   };
 
+  const handleLoginClick = () => {
+    navigate("/login"); // Redirige vers la page de connexion
+  };
+
   return (
     <div className="header-container">
       <div
