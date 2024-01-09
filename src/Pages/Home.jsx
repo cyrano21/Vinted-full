@@ -25,14 +25,6 @@ const Home = ({ fetchRangeValues, search, sortPrice }) => {
           }&title=${search}`
         );
 
-        // const response = await axios.get(
-        //   `https://site--backend-vinted--cl5kfjmsrksj.code.run/offers?priceMin=${
-        //     fetchRangeValues[0]
-        //   }&priceMax=${fetchRangeValues[1]}&sort=${
-        //     sortPrice ? "price-desc" : "price-asc"
-        //   }&title=${search}`
-        // );
-
         console.log(response.data);
 
         setData(response.data);

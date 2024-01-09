@@ -132,8 +132,6 @@ const Header = ({
       >
         Vends tes articles
       </button>
-      {/* Si l'utilisateur est un admin, affichez le bouton de réinitialisation: */}
-      {/* {isAdmin && <ResetUsers />} */}
     </div>
   );
 };

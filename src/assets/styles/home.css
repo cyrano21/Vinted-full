@@ -61,12 +61,37 @@
   flex-wrap: wrap;
   margin: auto;
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .card-container {
-  width: 235px;
-  padding: 0 6px 16px;
+  flex: 1 0 25%;
+  min-width: 260px;
+  max-width: 280px;
+  height: 620px;
+  background: #060d2c;
+  border-radius: 35px;
+  margin: 5px;
+  padding: 26px 15px 30px;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container::after {
+  content: "";
+  position: absolute;
+  height: 90px;
+  width: 100%;
+  /* Remplacez $black par une couleur CSS valide, par exemple #000000 pour noir */
+  background: linear-gradient(180deg, rgba(195, 34, 34, 0) 0%, #000000 55%);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  border-radius: 0 0 30px 30px;
 }
 
 .card-container div:last-child img {

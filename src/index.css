@@ -1,3 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  max-width: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Maison Neue";
@@ -27,4 +35,31 @@ button {
 
 img {
   pointer-events: none;
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 20px; /* Taille de police plus petite pour les tablettes */
+  }
+
+  /* Autres ajustements spécifiques aux tablettes */
+}
+
+/* Styles responsives pour mobiles */
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 18px; /* Taille de police plus petite pour les mobiles */
+  }
+
+  a {
+    margin-top: 15px; /* Ajustement des marges pour les mobiles */
+  }
+
+  /* Ajustements pour boutons et inputs sur mobiles */
+  button,
+  input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Autres ajustements spécifiques aux mobiles */
 }

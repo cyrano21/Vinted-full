@@ -71,69 +71,36 @@
   font-size: 9px;
 }
 
-/* HOME ***************************** */
-
-.home-loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.home-hero-bg-img {
-  background-image: url("./assets/images/hero.jpg");
-  height: 455px;
-  width: 100%;
-  position: relative;
-  background-position: center;
-  background-size: cover;
-}
-
-.home-hero-bg-img > div {
-  width: 1280px;
-  margin: auto;
-}
-
-.home-hero-ready {
-  height: 220px;
-  width: 360px;
-  background-color: white;
-  padding: 25px;
-  border-radius: 3px;
-  font-size: 34px;
+/* Ajout de styles pour l'espace de téléchargement de l'avatar */
+.avatar {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  top: 75px;
-  box-shadow: 0px 0px 2px rgba(17, 17, 17, 0.24);
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  border: 2px dashed #0ab1ba; /* Contour en pointillé pour la zone de téléchargement */
+  border-radius: 10px; /* Bordures arrondies */
+  background-color: #e6f7ff; /* Arrière-plan clair */
 }
 
-.home-hero-ready button {
-  height: 45px;
-  width: 187px;
-  background-color: #2baeb7;
-  border-radius: 4px;
-  color: white;
-  font-size: 16px;
-  border: none;
-  padding: 0 14px;
-  margin-top: 32px;
+.avatar label {
+  font-weight: bold;
+  color: #0ab1ba;
+  margin-bottom: 10px;
 }
 
-.home-hero-forme {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 80px;
-  pointer-events: none;
+.avatar-preview {
+  max-width: 100px; /* Taille maximale de l'aperçu */
+  max-height: 100px;
+  border-radius: 50%; /* Rendre l'image de l'avatar circulaire */
+  margin-top: 10px;
 }
-.home-card-wrapper {
-  width: 1280px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  margin-top: 30px;
+
+/* Vous pouvez également ajuster la taille et l'apparence du bouton de téléchargement */
+#avatarUpload {
+  font-size: 1rem;
+  padding: 10px 20px;
 }
 
 .card-container {
@@ -189,7 +156,7 @@
 }
 
 .offer-container {
-  width: 1280px;
+  max-width: 100%;
   margin: 0px auto;
   display: flex;
   justify-content: space-around;
@@ -574,5 +541,51 @@
   }
   to {
     opacity: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .home-hero-bg-img,
+  .offer-container,
+  .publish-container {
+    width: 90%; /* Ajustez la largeur sur les petits écrans */
+  }
+
+  .home-hero-ready {
+    width: 80%; /* Ajustez la largeur de ce conteneur */
+  }
+
+  .card-container {
+    width: 100%; /* Les cartes prennent toute la largeur sur les petits écrans */
+  }
+
+  .text-input > input,
+  .text-input > textarea {
+    width: 70%; /* Ajustez la largeur des champs de texte */
+  }
+
+  .signup-form {
+    width: 90%; /* Ajustez la largeur du formulaire d'inscription */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-hero-ready {
+    font-size: 24px; /* Réduire la taille de la police pour une meilleure lisibilité */
+  }
+
+  .signup-form,
+  .publish-container,
+  .offer-container {
+    width: 100%; /* Ajustez la largeur sur les très petits écrans */
+  }
+
+  .publish-main h2,
+  .offer-price {
+    font-size: 20px; /* Ajustez la taille de la police */
+  }
+
+  .card-avatar-username > img {
+    height: 20px;
+    width: 20px; /* Ajustez la taille des avatars dans les cartes */
   }
 }

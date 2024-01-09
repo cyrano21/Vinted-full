@@ -49,11 +49,6 @@ const UpdateOffer = () => {
         formDataToSend
       );
 
-      //   const response = await axios.put(
-      //     `http://localhost:4000/offer/update/${params.id}`,
-      //     formDataToSend
-      //   );
-
       // Traiter la réponse du serveur (redirection, message, etc.)
       console.log("Réponse du serveur :", response.data);
 

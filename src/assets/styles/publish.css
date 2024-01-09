@@ -2,24 +2,46 @@
 .publish-main {
   background-color: #ebedee;
 }
+<<<<<<< HEAD
 .publish-container {
   width: 1280px;
   margin: 0 auto;
 }
+=======
+
+.publish-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+>>>>>>> 3c73da6 (css correction)
 .publish-main h2 {
   font-size: 24px;
   font-family: "Maison Neue";
   padding-top: 40px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c73da6 (css correction)
 .file-select {
   background-color: white;
   padding: 24px;
   margin: 20px 0;
   box-shadow: 0 0 2px gray;
 }
+<<<<<<< HEAD
 .file-select > p {
   margin: 0 0 10px 0;
 }
+=======
+
+.file-select > p {
+  margin: 0 0 10px 0;
+}
+
+>>>>>>> 3c73da6 (css correction)
 .dashed-preview-without {
   border: 1px #ebedee dashed;
   border-radius: 3px;
@@ -28,7 +50,13 @@
   justify-content: center;
   align-items: center;
 }
+<<<<<<< HEAD
 .input-design-default {
+=======
+
+.input-design-default,
+.input-design-image {
+>>>>>>> 3c73da6 (css correction)
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,6 +65,7 @@
   height: 45px;
   width: 200px;
 }
+<<<<<<< HEAD
 .input-design-image {
   display: flex;
   align-items: center;
@@ -46,6 +75,13 @@
   height: 45px;
   width: 45px;
 }
+=======
+
+.input-design-image {
+  width: 45px;
+}
+
+>>>>>>> 3c73da6 (css correction)
 .dashed-preview-image {
   border: 1px #ebedee dashed;
   border-radius: 3px;
@@ -53,10 +89,18 @@
   display: flex;
   align-items: center;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c73da6 (css correction)
 .dashed-preview-image img {
   height: 90%;
   margin: 0 10px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c73da6 (css correction)
 .remove-img-button {
   position: relative;
   color: black;
@@ -71,15 +115,27 @@
   font-weight: 700;
   cursor: pointer;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c73da6 (css correction)
 .label-file {
   cursor: pointer;
   color: #0ab1ba;
   font-weight: bold;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c73da6 (css correction)
 .label-file > span {
   margin: 0 10px;
   vertical-align: middle;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c73da6 (css correction)
 .label-file:hover {
   color: #25a5c4;
 }
@@ -87,14 +143,23 @@
 .input-file {
   display: none;
 }
+<<<<<<< HEAD
 .input-sign {
   font-size: 40px;
 }
+=======
+
+.input-sign {
+  font-size: 40px;
+}
+
+>>>>>>> 3c73da6 (css correction)
 .text-input-section {
   background-color: white;
   margin: 20px 0;
   box-shadow: 0 0 2px gray;
 }
+<<<<<<< HEAD
 .text-input-section > .text-input:not(:last-child) {
   height: 25px;
   border-bottom: 1px solid #ebedee;
@@ -103,17 +168,39 @@
 .text-input-section label {
   color: #666666;
 }
+=======
+
+.text-input-section > .text-input:not(:last-child) {
+  height: 45px;
+  border-bottom: 1px solid #ebedee;
+}
+
+.text-input-section label {
+  color: #666666;
+}
+
+>>>>>>> 3c73da6 (css correction)
 .text-input {
   display: flex;
   justify-content: space-between;
   padding: 24px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c73da6 (css correction)
 .text-input > h4 {
   font-weight: normal;
   margin: 0;
   vertical-align: baseline;
 }
+<<<<<<< HEAD
 .text-input > input {
+=======
+
+.text-input > input,
+.text-input > textarea {
+>>>>>>> 3c73da6 (css correction)
   width: 50%;
   border: none;
   border-bottom: 1px solid #ebedee;
@@ -121,9 +208,30 @@
   font-family: "Maison Neue";
   font-size: 16px;
 }
+<<<<<<< HEAD
 .checkbox-section {
   width: 50%;
 }
+=======
+
+.text-input > input:focus,
+.text-input > textarea:focus {
+  border-bottom: 1px solid #0ab1ba;
+  background-color: white;
+}
+
+.text-input > input::placeholder,
+.text-input > textarea::placeholder {
+  font-family: "Maison Neue";
+  font-size: 16px;
+  color: #c4c7c9;
+}
+
+.checkbox-section {
+  width: 50%;
+}
+
+>>>>>>> 3c73da6 (css correction)
 .checkbox-section > input {
   border: none;
   border-bottom: 1px solid #ebedee;
@@ -132,6 +240,7 @@
   font-size: 16px;
   margin-bottom: 40px;
 }
+<<<<<<< HEAD
 .text-input > input:focus {
   border-bottom: 1px solid #0ab1ba;
 }
@@ -167,26 +276,48 @@
   font-size: 16px;
   color: #c4c7c9;
 }
+=======
+
+.checkbox-section > input:focus {
+  border-bottom: 1px solid #0ab1ba;
+}
+>>>>>>> 3c73da6 (css correction)
 
 .checkbox-input > input {
   display: none;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c73da6 (css correction)
 .checkbox-design {
   border-radius: 3px;
   padding: 2px 11px 2px 11px;
   margin: 0 15px 0 0;
   border: 1px solid black;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c73da6 (css correction)
 .checkbox-design-checked {
   border-radius: 3px;
   padding: 3px 6px 3px 6px;
   margin: 0 15px 0 0;
   background-color: #0ab1ba;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c73da6 (css correction)
 .form-button-div {
   display: flex;
   justify-content: flex-end;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c73da6 (css correction)
 .form-validation {
   background-color: #0ab1ba;
   color: white;
@@ -197,6 +328,10 @@
   padding: 12px 12px;
   margin: 50px 0;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3c73da6 (css correction)
 .save-offer {
   background-color: transparent;
   color: #0ab1ba;

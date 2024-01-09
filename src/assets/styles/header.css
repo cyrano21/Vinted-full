@@ -18,11 +18,6 @@
   cursor: pointer;
 }
 
-/* .search-container {
-  position: relative;
-  flex-grow: 1;
-} */
-
 .search-container {
   position: relative;
   display: flex;
@@ -118,4 +113,28 @@
 
 .dashboard-button:hover {
   background-color: #1e899b;
+}
+
+/* Pour les écrans de petite taille */
+@media screen and (max-width: 768px) {
+  .header-container {
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+/* Pour les écrans de taille moyenne */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .header-container {
+    width: 100%;
+    padding: 10px 40px;
+  }
+
+  .search-input {
+    width: 80%;
+  }
 }
