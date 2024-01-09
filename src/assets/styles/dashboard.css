@@ -2,24 +2,24 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #060d2c; /* Utilisation de la même couleur de fond que la carte */
-  border-radius: 35px; /* Utilisation du même rayon de bordure que la carte */
+  background-color: #060d2c;
+  border-radius: 35px;
   box-shadow: 0 8px 1px rgba(255, 255, 255, 0.1),
-    0 16px 1px rgba(255, 255, 255, 0.05); /* Utilisation du même effet d'ombre que la carte */
+    0 16px 1px rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    height: 90px;
-    width: 100%;
-    background: linear-gradient(180deg, rgba(195, 34, 34, 0) 0%, $black 55%);
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    border-radius: 0 0 30px 30px;
-  }
+.dashboard-container::after {
+  content: "";
+  position: absolute;
+  height: 90px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(195, 34, 34, 0) 0%, #000 55%);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  border-radius: 0 0 30px 30px;
 }
 
 /* Le reste du style reste inchangé par rapport à votre code initial */
