@@ -132,6 +132,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 8px;
+  color: #999999;
 }
 
 .card-price-size-brand span:first-child {
