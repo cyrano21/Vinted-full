@@ -1,21 +1,16 @@
-:root {
-  --header-bg-color: #060d2c;
-  --button-border-radius: 5px;
-  --button-primary-bg-color: #2cb1ba;
-  --button-secondary-bg-color: #c2175b;
-  --burger-btn-color: #09fbba;
-  --max-width-mobile: 772px;
-  --font-family-main: "Maison Neue", sans-serif;
-}
-
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin: auto;
   padding: 10px 0;
-  background-color: var(--header-bg-color);
+  background-color: #060d2c;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container > div:first-child {
+  cursor: pointer;
 }
 
 .header-logo {
@@ -33,17 +28,30 @@
   width: 70%;
   padding-left: 40px;
   background-color: #f5f6f7;
-  border-radius: var(--button-border-radius);
+  border-radius: 5px;
   height: 30px;
   margin-bottom: 10px;
   border: none;
   outline: none;
-  font-family: var(--font-family-main);
+  font-family: "Maison Neue";
   font-size: 16px;
 }
 
 .search-input::placeholder {
   color: #cbcccd;
+  font-size: 16px;
+}
+
+.search-input {
+  width: 590px;
+  padding-left: 40px;
+  background-color: #f5f6f7;
+  border-radius: 5px;
+  height: 37px;
+  border: none;
+  outline: none;
+  font-family: "Maison Neue";
+  font-size: 16px;
 }
 
 .search-input-icon {
@@ -56,31 +64,32 @@
 .header-button {
   height: 30px;
   width: 115px;
-  border: 1px solid var(--button-primary-bg-color);
-  border-radius: var(--button-border-radius);
-  font-family: var(--font-family-main);
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  font-family: "Maison Neue";
   font-size: 12px;
   outline: none;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .button-login-signup {
   background-color: white;
-  color: var(--button-primary-bg-color);
+  color: #2cb1ba;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .button-login-signup:hover {
-  background-color: var(--button-primary-bg-color);
-  color: white;
+  background-color: #2cb1ba; /* Changement de fond au survol */
+  color: white; /* Changement de la couleur du texte au survol */
 }
 
 .button-sold {
-  background-color: var(--button-primary-bg-color);
+  background-color: #2cb1ba;
   color: white;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .button-sold:hover {
-  background-color: #198f97;
+  background-color: #198f97; /* Une teinte plus foncée au survol */
 }
 
 .button-signup {
@@ -88,12 +97,28 @@
 }
 
 .button-logout {
-  background-color: var(--button-secondary-bg-color);
+  background-color: #c2175b;
   color: white;
+  transition: background-color 0.3s;
 }
 
 .button-logout:hover {
-  background-color: #a4154a;
+  background-color: #a4154a; /* Une teinte plus foncée au survol */
+}
+
+.dashboard-button {
+  background-color: #2cb1ba;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: "Maison Neue";
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  margin-left: 20px;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 .dashboard-button:hover {
@@ -101,10 +126,10 @@
 }
 
 .toggle-btn {
-  display: none;
+  display: none; /* Caché par défaut */
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 20px; /* Position à gauche */
   cursor: pointer;
   height: 50px;
   width: 50px;
@@ -114,34 +139,40 @@
   width: 60px;
   height: 10px;
   border-radius: 5px;
-  background: var(--burger-btn-color);
+  background: #09fbba;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 5px; /* Espacement entre les barres */
   transition: 0.3s ease;
 }
 
-@media screen and (max-width: var(--max-width-mobile)) {
+@media screen and (max-width: 772px) {
   .toggle-btn {
     display: block;
   }
   .header-button {
-    display: none;
+    display: none; /* Masquer les autres boutons dans le header */
   }
 }
 
+/* Pour les écrans de petite taille */
 @media screen and (max-width: 768px) {
   .header-container {
+    width: 100%;
     padding: 10px 20px;
   }
+
   .search-input {
     width: 100%;
   }
 }
 
+/* Pour les écrans de taille moyenne */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .header-container {
+    width: 100%;
     padding: 10px 40px;
   }
+
   .search-input {
     width: 80%;
   }
