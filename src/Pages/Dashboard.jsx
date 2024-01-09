@@ -56,7 +56,6 @@ const Dashboard = ({ token }) => {
                   <Link to={`/update/offer/${offer._id}`} className="offer-btn">
                     Modifier
                   </Link>
-                  {/* {console.log("offer._id", offer._id)} */}
                 </li>
               ))}
             </ul>
