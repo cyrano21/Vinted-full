@@ -17,10 +17,8 @@ const Header = ({
 }) => {
   const navigate = useNavigate();
 
-  const location = useLocation();
-
-  const handleLoginClick = () => {
-    navigate("/login");
+  const handleNavigate = (path) => {
+    navigate(path);
   };
 
   return (
@@ -111,9 +109,7 @@ const Header = ({
         </div>
       )}
       <button
-        onClick={() => {
-          token ? navigate("/publish") : navigate("/login");
-        }}
+        onClick={() => handleNavigate(token ? "/publish" : "/login")}
         className="header-button button-sold"
       >
         Vends tes articles
