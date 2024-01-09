@@ -6,13 +6,6 @@ import ResetUsers from "./ResetUsers";
 import { Link } from "react-router-dom";
 import "../assets/styles/header.css";
 import React from "react";
-// import process from "process"; // Importer process.env
-// // ...
-
-// import { loadEnv } from "@next/env";
-
-// // Chargez les variables d'environnement
-// loadEnv(process.env.REACT_APP_ENV_PATH);
 
 const Header = ({
   token,
@@ -26,14 +19,9 @@ const Header = ({
 
   const location = useLocation();
 
-  // const isAdmin = token === import.meta.env.VITE_REACT_APP_ADMIN_TOKEN;
-
-  // // // Ce n'est qu'un exemple, ajustez en fonction de votre situation.
-
-  // console.log("Admin Token:", admin_token);
-
-  // console.log("User's Token:", token);
-  // console.log("isAdmin:", isAdmin);
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
 
   return (
     <div className="header-container">
@@ -115,9 +103,7 @@ const Header = ({
             S'inscrire
           </button>
           <button
-            onClick={() => {
-              navigate("/login");
-            }}
+            onClick={handleLoginClick}
             className="header-button button-login-signup"
           >
             Se connecter
@@ -126,7 +112,7 @@ const Header = ({
       )}
       <button
         onClick={() => {
-          navigate("/publish");
+          token ? navigate("/publish") : navigate("/login");
         }}
         className="header-button button-sold"
       >
