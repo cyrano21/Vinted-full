@@ -1,5 +1,9 @@
 /* HOME ***************************** */
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 .home-loader {
   display: flex;
   justify-content: center;
