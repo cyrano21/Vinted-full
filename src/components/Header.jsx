@@ -24,6 +24,10 @@ const Header = ({
   const handleLoginClick = () => {
     navigate("/login"); // Redirige vers la page de connexion
   };
+  const handleLogout = () => {
+    setUserToken(null); // Met à jour l'état du token
+    navigate("/login"); // Redirige l'utilisateur vers la page de connexion
+  };
 
   return (
     <div className="header-container">
@@ -90,10 +94,8 @@ const Header = ({
             Tableau de bord
           </Link>
           <button
-            onClick={() => {
-              setUserToken(null);
-            }}
-            className="header-button button-logout"
+            onClick={handleLogout}
+            className="header-button button-logout "
           >
             Se déconnecter
           </button>
