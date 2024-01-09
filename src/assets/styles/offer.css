@@ -31,7 +31,7 @@
 .offer-price {
   font-size: 24px;
   line-height: 32px;
-  color: white;
+  color: #333; /* Changement de couleur pour améliorer la visibilité */
 }
 
 .offer-list {

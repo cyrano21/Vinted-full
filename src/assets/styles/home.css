@@ -91,7 +91,12 @@ body {
   height: 90px;
   width: 100%;
   /* Remplacez $black par une couleur CSS valide, par exemple #000000 pour noir */
-  background: linear-gradient(180deg, rgba(195, 34, 34, 0) 0%, #000000 55%);
+  background: linear-gradient(
+    180deg,
+    rgba(195, 34, 34, 0) 0%,
+    rgba(0, 0, 0, 0.3) 55%
+  );
+
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
