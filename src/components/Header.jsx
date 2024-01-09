@@ -53,7 +53,9 @@ const Header = ({
                 alignItems: "center",
               }}
             >
-              <span style={{ marginRight: 10 }}>Trier par prix : </span>
+              <span style={{ marginRight: 10, color: "white" }}>
+                Trier par prix :{" "}
+              </span>
               <span className="checkbox">
                 <input
                   type="checkbox"
@@ -72,7 +74,9 @@ const Header = ({
                   </div>
                 </div>
               </span>
-              <span style={{ marginRight: 10 }}>Prix entre : </span>
+              <span style={{ marginRight: 10, color: "white" }}>
+                Prix entre :{" "}
+              </span>
               <PriceRange setFetchRangeValues={setFetchRangeValues} />
             </div>
           </div>
