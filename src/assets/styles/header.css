@@ -74,11 +74,22 @@
 .button-login-signup {
   background-color: white;
   color: #2cb1ba;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-login-signup:hover {
+  background-color: #2cb1ba; /* Changement de fond au survol */
+  color: white; /* Changement de la couleur du texte au survol */
 }
 
 .button-sold {
   background-color: #2cb1ba;
   color: white;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.button-sold:hover {
+  background-color: #198f97; /* Une teinte plus foncée au survol */
 }
 
 .button-signup {
@@ -86,14 +97,13 @@
 }
 
 .button-logout {
-  height: 30px;
-  border-radius: 5px;
-  font-family: "Maison Neue";
-  font-size: 12px;
-  outline: none;
-  border: none;
   background-color: #c2175b;
   color: white;
+  transition: background-color 0.3s;
+}
+
+.button-logout:hover {
+  background-color: #a4154a; /* Une teinte plus foncée au survol */
 }
 
 .dashboard-button {

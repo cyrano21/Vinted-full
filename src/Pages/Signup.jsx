@@ -56,71 +56,75 @@ const Signup = ({ setUserToken }) => {
   };
 
   return (
-    <div className="signup-container">
-      <h2>S'inscrire</h2>
-      <form onSubmit={handleSubmit} className="signup-form">
-        <input
-          value={username}
-          onChange={(event) => {
-            setUsername(event.target.value);
-          }}
-          placeholder="Nom d'utilisateur"
-          type="text"
-        />
-        <input
-          value={email}
-          onChange={(event) => {
-            setEmail(event.target.value);
-            setErrorMessage("");
-          }}
-          placeholder="Email"
-          type="email"
-        />
-        <span className="signup-login-error-message">{errorMessage}</span>
-        <input
-          value={password}
-          onChange={(event) => {
-            setPassword(event.target.value);
-          }}
-          placeholder="Mot de passe"
-          type="password"
-        />
-        <div className="checkbox-container">
-          <div>
-            <input type="checkbox" />
-            <span>S'inscrire à notre newsletter</span>
-          </div>
-          <p>
-            En m'inscrivant je confirme avoir lu et accepté les Termes &
-            Conditions et Politique de Confidentialité de Vinted. Je confirme
-            avoir au moins 18 ans.
-          </p>
-        </div>
-
-        <div className="avatar">
-          <label htmlFor="avatarUpload" className="custom-file-upload">
-            Choisir un avatar
-          </label>
+    <div className="form-contain">
+      <div className="signup-container">
+        <h2>S'inscrire</h2>
+        <form onSubmit={handleSubmit} className="signup-form">
           <input
-            id="avatarUpload"
-            onChange={handleAvatarChange}
-            type="file"
-            accept="image/*"
-            style={{ display: "none" }}
+            value={username}
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+            placeholder="Nom d'utilisateur"
+            type="text"
           />
+          <input
+            value={email}
+            onChange={(event) => {
+              setEmail(event.target.value);
+              setErrorMessage("");
+            }}
+            placeholder="Email"
+            type="email"
+          />
+          <span className="signup-login-error-message">{errorMessage}</span>
+          <input
+            value={password}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+            placeholder="Mot de passe"
+            type="password"
+          />
+          <div className="checkbox-container">
+            <div>
+              <input type="checkbox" />
+              <span>S'inscrire à notre newsletter</span>
+            </div>
+            <p>
+              En m'inscrivant je confirme avoir lu et accepté les Termes &
+              Conditions et Politique de Confidentialité de Vinted. Je confirme
+              avoir au moins 18 ans.
+            </p>
+          </div>
 
-          {avatar && (
-            <img
-              src={URL.createObjectURL(avatar)}
-              alt="Preview"
-              className="avatar-preview"
+          <div className="avatar">
+            <label htmlFor="avatarUpload" className="custom-file-upload">
+              Choisir un avatar
+            </label>
+            <input
+              id="avatarUpload"
+              onChange={handleAvatarChange}
+              type="file"
+              accept="image/*"
+              style={{ display: "none" }}
             />
-          )}
-        </div>
 
-        <button type="submit">S'inscrire</button>
-      </form>
-      <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
+            {avatar && (
+              <img
+                src={URL.createObjectURL(avatar)}
+                alt="Preview"
+                className="avatar-preview"
+              />
+            )}
+          </div>
+
+          <button type="submit" id="submitBtn">
+            S'inscrire
+          </button>
+        </form>
+        <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
+      </div>
     </div>
   );
 };

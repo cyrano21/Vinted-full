@@ -50,34 +50,40 @@ const Login = ({ setUserToken }) => {
   };
 
   return (
-    <div className="signup-container">
-      <h2>Se connecter</h2>
-      <form onSubmit={handleSubmit} className="signup-form">
-        <input
-          onChange={(event) => {
-            setEmail(event.target.value);
-            setErrorMessage("");
-          }}
-          placeholder="Adresse email"
-          type="email"
-        />
-        <input
-          onChange={(event) => {
-            setPassword(event.target.value);
-          }}
-          placeholder="Mot de passe"
-          type="password"
-        />
-        <span className="signup-login-error-message">{errorMessage}</span>
-        {isLoading ? (
-          <Loader color="#2CB1BA" height={40} width={40} />
-        ) : (
-          <button disabled={isLoading ? true : false} type="submit">
-            Se connecter
-          </button>
-        )}
-      </form>
-      <Link to="/signup">Pas encore de compte ? Inscris-toi !</Link>
+    <div className="form-contain">
+      <div className="signup-container">
+        <h2>Se connecter</h2>
+        <form onSubmit={handleSubmit} className="signup-form">
+          <input
+            onChange={(event) => {
+              setEmail(event.target.value);
+              setErrorMessage("");
+            }}
+            placeholder="Adresse email"
+            type="email"
+          />
+          <input
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+            placeholder="Mot de passe"
+            type="password"
+          />
+          <span className="signup-login-error-message">{errorMessage}</span>
+          {isLoading ? (
+            <Loader color="#2CB1BA" height={40} width={40} />
+          ) : (
+            <button
+              disabled={isLoading ? true : false}
+              type="submit"
+              id="submitBtn"
+            >
+              Se connecter
+            </button>
+          )}
+        </form>
+        <Link to="/signup">Pas encore de compte ? Inscris-toi !</Link>
+      </div>
     </div>
   );
 };

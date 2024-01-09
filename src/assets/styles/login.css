@@ -1,11 +1,31 @@
 /* LOGIN ********************** */
-
+.form-contain {
+  width: 100%;
+  background: url(../images/loginBg.png) no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
 .signup-container {
+  width: 400px;
+  background: rgb(1 1 1 / 59%); /* Noir avec transparence */
+  border-radius: 5px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   margin-top: 30px;
+  box-shadow: 0 4px 19px 18px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* Effet de flou */
+}
+
+.signup-container h2 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 550;
+  text-align: center;
 }
 .signup-form {
   display: flex;
@@ -14,15 +34,27 @@
   flex-direction: column;
 }
 .signup-form > input {
-  border: none;
+  /* border: none;
   border-bottom: 1px solid #fcced3;
   height: 35px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; */
+  background: #ffffff;
+  border-radius: 6px;
+  font-size: 15px;
+  line-height: 35px;
+  border: 0;
+  outline: none;
+  border-radius: 5px;
+  color: #000;
+  padding: 0 10px;
 }
 
 .signup-form input::placeholder {
-  color: #cbcccd;
-  font-size: 16px;
+  /* color: #cbcccd;
+  font-size: 16px; */
+
+  color: #a9a9a9;
+  font-size: 14px;
 }
 
 .signup-form input[type="checkbox"] {
@@ -47,7 +79,7 @@
   color: #666666;
 }
 
-.signup-form button {
+#submitBtn {
   background-color: #2cb1ba;
   height: 45px;
   width: 100%;
@@ -67,4 +99,24 @@
 .signup-login-error-message {
   color: red;
   font-size: 9px;
+}
+*/ .signup-container a {
+  transition: color 0.3s;
+}
+.signup-container a:hover {
+  color: #238b8d;
+}
+
+.signup-form button {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+.signup-form button:hover {
+  background-color: #28a0a7;
+}
+.signup-login-error-message {
+  color: #ff4d4d;
+  font-size: 11px;
 }
