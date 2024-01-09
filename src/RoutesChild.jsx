@@ -45,6 +45,7 @@ const RoutesChild = ({
           path="/"
           element={
             <Home
+              token={token}
               fetchRangeValues={fetchRangeValues}
               sortPrice={sortPrice}
               search={search}

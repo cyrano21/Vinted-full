@@ -8,31 +8,40 @@ import ErrorBoundary from "../components/ErrorBoundary";
 
 import "../assets/styles/home.css";
 
-const Home = ({ fetchRangeValues, search, sortPrice }) => {
+const Home = ({ fetchRangeValues, search, sortPrice, token }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
+  const handleStartSellingClick = () => {
+    if (token) {
+      navigate("/publish");
+    } else {
+      navigate("/login");
+    }
+  };
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        `https://site--backend-vinted--cl5kfjmsrksj.code.run/offers?priceMin=${
+          fetchRangeValues[0]
+        }&priceMax=${fetchRangeValues[1]}&sort=${
+          sortPrice ? "price-desc" : "price-asc"
+        }&title=${search}`
+      );
+
+      console.log(response.data);
+
+      setData(response.data);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://site--backend-vinted--cl5kfjmsrksj.code.run/offers?priceMin=${
-            fetchRangeValues[0]
-          }&priceMax=${fetchRangeValues[1]}&sort=${
-            sortPrice ? "price-desc" : "price-asc"
-          }&title=${search}`
-        );
-
-        console.log(response.data);
-
-        setData(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
     fetchData();
   }, [fetchRangeValues, sortPrice, search]);
 
@@ -45,11 +54,7 @@ const Home = ({ fetchRangeValues, search, sortPrice }) => {
         <div>
           <div className="home-hero-ready">
             Prêts à faire du tri dans vos placards ?
-            <button
-              onClick={() => {
-                navigate("/publish");
-              }}
-            >
+            <button onClick={handleStartSellingClick}>
               Commencer à vendre
             </button>
           </div>
