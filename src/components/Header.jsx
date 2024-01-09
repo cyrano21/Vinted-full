@@ -93,7 +93,7 @@ const Header = ({
             onClick={() => {
               setUserToken(null);
             }}
-            className="button-logout"
+            className="header-button button-logout"
           >
             Se déconnecter
           </button>

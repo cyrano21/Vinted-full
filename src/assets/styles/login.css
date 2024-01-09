@@ -89,11 +89,11 @@
   font-size: 12px;
 }
 
-.signup-login-error-message {
+/* .signup-login-error-message {
   color: red;
   font-size: 9px;
-}
-*/ .signup-container a {
+} */
+.signup-container a {
   transition: color 0.3s;
 }
 .signup-container a:hover {
