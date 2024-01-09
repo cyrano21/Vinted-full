@@ -1,5 +1,5 @@
 .dashboard-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 20px;
   background-color: #060d2c;
@@ -39,6 +39,9 @@
 
 .user-info {
   font-size: 18px;
+}
+.user-info p {
+  margin-left: 20px;
 }
 
 .loading-message {
