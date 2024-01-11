@@ -1,81 +1,98 @@
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100vh;
-  background: #09fbba;
-  transition: left 0.5s;
-  z-index: 10;
-}
 
-.sidebar.active {
-  left: 0; /* Fait apparaître la sidebar */
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 20px;
-}
-
-.sidebar li {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.sidebar li:hover {
-  background-color: #07d5a7;
-}
-
-.toggle-btn {
+.navbar {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  cursor: pointer;
-  height: 30px;
+  width: 100%; 
+}
+
+.burger-menu {
+    transition: transform 0.6s ease;
+    cursor: pointer;
+    position: absolute; 
+    z-index: 1000;
+    display: none;
+}
+.burger-menu.open{
+ transform: translateX(150px); 
+ transition: 0.6s ease;
+ top:50px;
+ 
+}
+
+.burger-menu.open div{
+    background-color:#2cb1ba;
+}
+
+
+.burger-menu div {
   width: 30px;
-  display: none;
+  height: 3px;
+  background-color: rgb(213, 207, 207);
+  margin: 5px;
 }
 
-.toggle-btn span {
+.change.bar1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.change.bar2 {
+  opacity: 0;
+}
+
+.change.bar3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Styles pour la navbar */
+.nav-menu {
+    width: 0;
+  position: fixed; 
+  left: 0px;
+  top :126px;
+  background-color: #2cb1ba;
+  overflow-x: hidden;
+  transition: 0.5s ease;
+  z-index: 500; /
+}
+
+.nav-menu ul {
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+  margin-top: 30px;
+  list-style: none;
+  height: 100%;
+ 
+}
+
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-links {
   display: block;
-  height: 4px;
-  width: 100%;
-  background: #fff;
-  margin: 5px 0;
-  transition: all 0.3s ease;
 }
 
-.toggle-btn.active span:nth-child(1) {
-  transform: translate(0.75em, 1.25em) rotate(45deg);
-  transition: ease-out 0.5s;
-}
-
-.toggle-btn.active span:nth-child(2) {
-  transform: scale(0.1);
-  transition: ease-out 0.5s;
-}
-
-.toggle-btn.active span:nth-child(3) {
-  transform: translate(-0.5em, 1em) rotate(135deg);
-  transition: ease-out 0.5s;
-}
-
-@media screen and (max-width: 772px) {
-  .toggle-btn {
+@media screen and (max-width: 768px) {
+  .burger-menu {
     display: block;
   }
+  .nav-menu.open {
+    width: 150px;
+    height: 50vh;
+    border-radius: 10px;
+  }
 
-  .header-button {
+  .nav-links {
     display: none;
   }
-
-  .sidebar.active {
-    left: 0;
-  }
-  /* .sidebar.active ~ .toggle-btn {
-    left: 20px; 
-    top: 20px; 
-    position: fixed; 
-  } */
 }
+
+@media screen and (min-width: 768px) {
+  .nav-menu links {
+    display: none;
+  }
+}
+

@@ -46,6 +46,48 @@ const Header = ({
         }}
       >
         <img className="header-logo" src={logo} alt="vinted" />
+        <Sidebar
+          token={token}
+          setUserToken={setUserToken}
+          // burgerActive={burgerActive}
+          // onClose={closeSidebar}
+        />
+
+        <div className="header-links">
+          <ul>
+            {token ? (
+              <div className="auth-buttons">
+                {/* Ajoutez un lien vers le tableau de bord */}
+                <Link to="/dashboard" className="dashboard-button">
+                  Tableau de bord
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="header-button button-logout "
+                >
+                  Se déconnecter
+                </button>
+              </div>
+            ) : (
+              <div className="auth-buttons">
+                <button
+                  onClick={() => {
+                    navigate("/signup");
+                  }}
+                  className="header-button button-login-signup button-signup"
+                >
+                  S'inscrire
+                </button>
+                <button
+                  onClick={handleLoginClick}
+                  className="header-button button-login-signup"
+                >
+                  Se connecter
+                </button>
+              </div>
+            )}
+          </ul>
+        </div>
       </div>
 
       <div className="search-container">
@@ -97,60 +139,12 @@ const Header = ({
         ) : null}
       </div>
 
-      {token ? (
-        <div className="auth-buttons">
-          {/* Ajoutez un lien vers le tableau de bord */}
-          <Link to="/dashboard" className="dashboard-button">
-            Tableau de bord
-          </Link>
-          <button
-            onClick={handleLogout}
-            className="header-button button-logout "
-          >
-            Se déconnecter
-          </button>
-        </div>
-      ) : (
-        <div className="auth-buttons">
-          <button
-            onClick={() => {
-              navigate("/signup");
-            }}
-            className="header-button button-login-signup button-signup"
-          >
-            S'inscrire
-          </button>
-          <button
-            onClick={handleLoginClick}
-            className="header-button button-login-signup"
-          >
-            Se connecter
-          </button>
-        </div>
-      )}
       <button
         onClick={() => handleNavigate(token ? "/publish" : "/login")}
         className="header-button button-sold"
       >
         Vends tes articles
       </button>
-      <div id="side-bar">
-        <div
-          className={`toggle-btn ${burgerActive ? "active" : ""}`}
-          onClick={toggleBurgerMenu}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <Sidebar
-          token={token}
-          setUserToken={setUserToken}
-          burgerActive={burgerActive}
-          onClose={closeSidebar}
-        />
-      </div>
     </div>
   );
 };

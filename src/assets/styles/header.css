@@ -11,8 +11,12 @@
 }
 .auth-buttons {
   display: flex;
-  /* flex-direction: column; */
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.auth-buttons ul li {
+  padding: 8px 20px;
 }
 
 .header-container > div:first-child {
@@ -22,6 +26,7 @@
 .header-logo {
   height: 40px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .search-container {
@@ -60,11 +65,6 @@
   font-size: 16px;
 }
 
-/* .random {
-  border: 1px solid red;
-  max-width: 500px;
-} */
-
 .search-input-icon {
   position: absolute;
   left: 7px;
@@ -73,19 +73,20 @@
 }
 
 .header-button {
-  height: 30px;
+  height: 35px;
   width: 115px;
   border: 1px solid #2cb1ba;
   border-radius: 5px;
   font-family: "Maison Neue";
-  font-size: 12px;
+  font-size: 14px;
   outline: none;
+  margin-bottom: 20px;
 }
 
 .button-login-signup {
   background-color: white;
   color: #2cb1ba;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.6s, color 0.6s;
 }
 
 .button-login-signup:hover {
@@ -101,10 +102,6 @@
 
 .button-sold:hover {
   background-color: #198f97; /* Une teinte plus foncée au survol */
-}
-
-.button-signup {
-  margin-right: 20px;
 }
 
 .button-logout {
@@ -136,6 +133,14 @@
   background-color: #1e899b;
 }
 
+.header-links .auth-buttons {
+  display: block;
+  margin-left: 100px;
+}
+
+.header-links .button-login-signup {
+  margin-right: 20px;
+}
 /* Pour les écrans de petite taille */
 @media screen and (max-width: 768px) {
   .header-container {
@@ -147,12 +152,16 @@
     justify-content: space-between;
   }
 
-  .header-container > div:first-child {
-    margin-top: 40px;
+  .button-sold {
+    display: none;
   }
 
   .random {
     width: 100%;
+  }
+
+  .header-links {
+    display: none;
   }
 }
 
