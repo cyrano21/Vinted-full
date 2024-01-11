@@ -6,6 +6,7 @@ import ResetUsers from "./ResetUsers";
 import { Link } from "react-router-dom";
 import "../assets/styles/header.css";
 import React from "react";
+import Sidebar from "./Sidebar"; // A
 import { useState } from "react";
 
 const Header = ({
@@ -16,13 +17,15 @@ const Header = ({
   setSortPrice,
   setSearch,
 }) => {
-  const navigate = useNavigate();
   const [burgerActive, setBurgerActive] = useState(false);
-
   const toggleBurgerMenu = () => {
     setBurgerActive(!burgerActive);
   };
+  const closeSidebar = () => {
+    setBurgerActive(false);
+  };
 
+  const navigate = useNavigate();
   const handleNavigate = (path) => {
     navigate(path);
   };
@@ -54,8 +57,9 @@ const Header = ({
         />
         <FontAwesomeIcon icon="search" className="search-input-icon" />
         {location.pathname === "/" ? (
-          <div>
+          <div className="random">
             <div
+              className="btn-random"
               style={{
                 marginTop: 25,
                 fontSize: "12px",
@@ -94,7 +98,7 @@ const Header = ({
       </div>
 
       {token ? (
-        <div>
+        <div className="auth-buttons">
           {/* Ajoutez un lien vers le tableau de bord */}
           <Link to="/dashboard" className="dashboard-button">
             Tableau de bord
@@ -107,7 +111,7 @@ const Header = ({
           </button>
         </div>
       ) : (
-        <div>
+        <div className="auth-buttons">
           <button
             onClick={() => {
               navigate("/signup");
@@ -130,13 +134,22 @@ const Header = ({
       >
         Vends tes articles
       </button>
-      <div
-        className={`toggle-btn ${burgerActive ? "active" : ""}`}
-        onClick={toggleBurgerMenu}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
+      <div id="side-bar">
+        <div
+          className={`toggle-btn ${burgerActive ? "active" : ""}`}
+          onClick={toggleBurgerMenu}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <Sidebar
+          token={token}
+          setUserToken={setUserToken}
+          burgerActive={burgerActive}
+          onClose={closeSidebar}
+        />
       </div>
     </div>
   );

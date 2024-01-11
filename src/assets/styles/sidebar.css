@@ -1,0 +1,81 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background: #09fbba;
+  transition: left 0.5s;
+  z-index: 10;
+}
+
+.sidebar.active {
+  left: 0; /* Fait apparaître la sidebar */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 20px;
+}
+
+.sidebar li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background-color: #07d5a7;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  display: none;
+}
+
+.toggle-btn span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active span:nth-child(1) {
+  transform: translate(0.75em, 1.25em) rotate(45deg);
+  transition: ease-out 0.5s;
+}
+
+.toggle-btn.active span:nth-child(2) {
+  transform: scale(0.1);
+  transition: ease-out 0.5s;
+}
+
+.toggle-btn.active span:nth-child(3) {
+  transform: translate(-0.5em, 1em) rotate(135deg);
+  transition: ease-out 0.5s;
+}
+
+@media screen and (max-width: 772px) {
+  .toggle-btn {
+    display: block;
+  }
+
+  .header-button {
+    display: none;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+  /* .sidebar.active ~ .toggle-btn {
+    left: 20px; 
+    top: 20px; 
+    position: fixed; 
+  } */
+}

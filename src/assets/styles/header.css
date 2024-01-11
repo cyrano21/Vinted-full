@@ -1,12 +1,18 @@
 .header-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  justify-items: center;
   width: 100%;
   margin: auto;
-  padding: 10px 0;
+  padding: 10px;
   background-color: #060d2c;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.auth-buttons {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: flex-end;
 }
 
 .header-container > div:first-child {
@@ -26,7 +32,7 @@
 
 .search-input {
   width: 70%;
-  padding-left: 40px;
+  padding: 0 40px;
   background-color: #f5f6f7;
   border-radius: 5px;
   height: 30px;
@@ -53,6 +59,11 @@
   font-family: "Maison Neue";
   font-size: 16px;
 }
+
+/* .random {
+  border: 1px solid red;
+  max-width: 500px;
+} */
 
 .search-input-icon {
   position: absolute;
@@ -125,55 +136,26 @@
   background-color: #1e899b;
 }
 
-.toggle-btn {
-  display: none; /* Caché par défaut */
-  position: absolute;
-  top: 20px;
-  left: 20px; /* Position à gauche */
-  cursor: pointer;
-  height: 50px;
-  width: 50px;
-}
-
-.toggle-btn span {
-  width: 60px;
-  height: 10px;
-  border-radius: 5px;
-  background: #09fbba;
-  display: block;
-  margin-bottom: 5px; /* Espacement entre les barres */
-  transition: 0.3s ease;
-}
-
-@media screen and (max-width: 772px) {
-  .toggle-btn {
-    display: block;
-  }
-  .header-button {
-    display: none; /* Masquer les autres boutons dans le header */
-  }
-}
-
 /* Pour les écrans de petite taille */
 @media screen and (max-width: 768px) {
   .header-container {
     width: 100%;
     padding: 10px 20px;
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: 30% 70%;
+    justify-content: space-between;
   }
 
-  .search-input {
+  .header-container > div:first-child {
+    margin-top: 40px;
+  }
+
+  .random {
     width: 100%;
   }
 }
 
-/* Pour les écrans de taille moyenne */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .header-container {
-    width: 100%;
-    padding: 10px 40px;
-  }
-
-  .search-input {
-    width: 80%;
-  }
+.search-input {
+  width: 100%;
 }
