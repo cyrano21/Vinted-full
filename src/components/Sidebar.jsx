@@ -1,41 +1,29 @@
 import "../assets/styles/sidebar.css";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Sidebar = ({ token, setUserToken }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigate = useNavigate();
-  //   const sidebarRef = useRef();
+  const sidebarRef = useRef();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  const handleLoginClick = () => {
-    navigate("/login"); // Redirige vers la page de connexion
-  };
+  //   const handleLoginClick = () => {
+  //     navigate("/login");
+  //   };
 
   const handleLogout = () => {
     setUserToken(null);
     navigate("/login");
   };
 
-  //   useEffect(() => {
-  //     const handleClickOutside = (event) => {
-  //       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-  //         onClose();
-  //       }
-  //     };
-  //     document.addEventListener("mousedown", handleClickOutside);
-  //     return () => {
-  //       document.removeEventListener("mousedown", handleClickOutside);
-  //     };
-  //   }, [onClose]);
-
   return (
     <nav className="navbar">
       <div
-        // ref={sidebarRef}
+        ref={sidebarRef}
         className={`burger-menu ${isOpen ? "open" : ""}`}
         onClick={toggleMenu}
       >
@@ -48,7 +36,6 @@ const Sidebar = ({ token, setUserToken }) => {
         <ul>
           {token ? (
             <div className="auth-buttons">
-              {/* Ajoutez un lien vers le tableau de bord */}
               <Link to="/dashboard" className="dashboard-button">
                 Tableau de bord
               </Link>
@@ -70,7 +57,9 @@ const Sidebar = ({ token, setUserToken }) => {
                 S'inscrire
               </button>
               <button
-                onClick={handleLoginClick}
+                onClick={() => {
+                  navigate("/login");
+                }}
                 className="header-button button-login-signup"
               >
                 Se connecter

@@ -21,8 +21,6 @@ const RoutesChild = ({
   const location = useLocation();
   const [displayLocation, setDisplayLocation] = useState(location);
   const [transitionStage, setTransitionStage] = useState("fade-in");
-  console.log("location =>", location);
-  console.log("displayLocation =>", displayLocation);
 
   useEffect(() => {
     if (location !== displayLocation) {

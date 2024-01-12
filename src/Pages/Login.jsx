@@ -51,7 +51,7 @@ const Login = ({ setUserToken }) => {
 
   return (
     <div className="form-contain">
-      <div className="signup-container">
+      <div className="login-container">
         <h2>Se connecter</h2>
         <form onSubmit={handleSubmit} className="signup-form">
           <input

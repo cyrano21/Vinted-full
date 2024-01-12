@@ -6,8 +6,7 @@ import ResetUsers from "./ResetUsers";
 import { Link } from "react-router-dom";
 import "../assets/styles/header.css";
 import React from "react";
-import Sidebar from "./Sidebar"; // A
-import { useState } from "react";
+import Sidebar from "./Sidebar";
 
 const Header = ({
   token,
@@ -17,26 +16,9 @@ const Header = ({
   setSortPrice,
   setSearch,
 }) => {
-  const [burgerActive, setBurgerActive] = useState(false);
-  const toggleBurgerMenu = () => {
-    setBurgerActive(!burgerActive);
-  };
-  const closeSidebar = () => {
-    setBurgerActive(false);
-  };
-
   const navigate = useNavigate();
-  const handleNavigate = (path) => {
-    navigate(path);
-  };
 
-  const handleLoginClick = () => {
-    navigate("/login"); // Redirige vers la page de connexion
-  };
-  const handleLogout = () => {
-    setUserToken(null); // Met à jour l'état du token
-    navigate("/login"); // Redirige l'utilisateur vers la page de connexion
-  };
+  const location = useLocation();
 
   return (
     <div className="header-container">
@@ -46,23 +28,20 @@ const Header = ({
         }}
       >
         <img className="header-logo" src={logo} alt="vinted" />
-        <Sidebar
-          token={token}
-          setUserToken={setUserToken}
-          // burgerActive={burgerActive}
-          // onClose={closeSidebar}
-        />
+        <Sidebar token={token} setUserToken={setUserToken} />
 
         <div className="header-links">
           <ul>
             {token ? (
               <div className="auth-buttons">
-                {/* Ajoutez un lien vers le tableau de bord */}
                 <Link to="/dashboard" className="dashboard-button">
                   Tableau de bord
                 </Link>
+
                 <button
-                  onClick={handleLogout}
+                  onClick={() => {
+                    setUserToken(null);
+                  }}
                   className="header-button button-logout "
                 >
                   Se déconnecter
@@ -70,16 +49,26 @@ const Header = ({
               </div>
             ) : (
               <div className="auth-buttons">
-                <button
+                {/* <button
                   onClick={() => {
+                    setUserToken(null);
                     navigate("/signup");
                   }}
                   className="header-button button-login-signup button-signup"
                 >
                   S'inscrire
-                </button>
+                </button> */}
+
+                <Link to="/signup">
+                  <button className="header-button button-login-signup button-signup">
+                    S'inscrire
+                  </button>
+                </Link>
+
                 <button
-                  onClick={handleLoginClick}
+                  onClick={() => {
+                    navigate("/login");
+                  }}
                   className="header-button button-login-signup"
                 >
                   Se connecter
@@ -89,7 +78,6 @@ const Header = ({
           </ul>
         </div>
       </div>
-
       <div className="search-container">
         <input
           type="text"
@@ -138,13 +126,19 @@ const Header = ({
           </div>
         ) : null}
       </div>
-
       <button
-        onClick={() => handleNavigate(token ? "/publish" : "/login")}
+        onClick={() => {
+          if (!token) {
+            navigate("/login");
+          } else {
+            navigate("/publish");
+          }
+        }}
         className="header-button button-sold"
       >
         Vends tes articles
       </button>
+      //
     </div>
   );
 };

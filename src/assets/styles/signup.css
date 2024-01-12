@@ -1,3 +1,128 @@
+/* .burger-menu,
+.header-links,
+.search-container,
+.header-button {
+  display: none;
+} */
+
+.form-contain {
+  width: 100%;
+
+  background: url(../images/loginBg.png) no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+.signup-container {
+  width: 400px;
+  margin: 25px 0;
+  background: rgb(1 1 1 / 59%);
+  border-radius: 5px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+  box-shadow: 0 4px 19px 18px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.signup-container h2 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 550;
+  text-align: center;
+}
+.signup-form {
+  display: flex;
+  width: 275px;
+  margin: auto;
+  flex-direction: column;
+}
+.signup-form > input {
+  background: #ffffff;
+  border-radius: 6px;
+  font-size: 15px;
+  line-height: 35px;
+  border: 0;
+  outline: none;
+  border-radius: 5px;
+  color: #000;
+  padding: 0 10px;
+}
+
+.signup-form input::placeholder {
+  color: #a9a9a9;
+  font-size: 14px;
+}
+
+.signup-form input[type="checkbox"] {
+  transform: scale(2);
+  margin-right: 20px;
+}
+
+.checkbox-container {
+  margin-top: 20px;
+  padding: 10px;
+}
+.checkbox-container > div {
+  display: flex;
+}
+.checkbox-container > p {
+  text-align: left;
+  color: #999999;
+  font-size: 12px;
+}
+
+.checkbox-container span {
+  color: #666666;
+}
+
+#submitBtn {
+  background-color: #2cb1ba;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 45px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.signup-container a {
+  color: #2cb1ba;
+  font-size: 12px;
+}
+
+.signup-container a {
+  transition: color 0.3s;
+}
+.signup-container a:hover {
+  color: #238b8d;
+}
+
+#submitBtn:hover {
+  background-color: #238b8d97;
+}
+.signup-login-error-message {
+  color: #ff4d4d;
+  font-size: 11px;
+}
 .custom-file-upload {
   cursor: pointer;
+}
+
+@media screen and (max-width: 408px) {
+  .signup-container {
+    width: 80%;
+    margin: auto;
+    margin: 25px 0;
+  }
+
+  #submitBtn {
+    text-align: center;
+  }
 }
