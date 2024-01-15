@@ -49,7 +49,7 @@ const Sidebar = ({ token, setUserToken }) => {
 
               <button
                 onClick={handleLogout}
-                className="header-button button-login-signup logout"
+                className="header-button button-login-signup button-logout"
               >
                 Se déconnecter
               </button>
