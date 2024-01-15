@@ -10,13 +10,13 @@
     position: absolute; 
     z-index: 1000;
     display: none;
-    top: 10px;
+    top: 35px;
 }
 .burger-menu.open{
   cursor: pointer;
  transform: translateX(150px); 
  transition: 0.6s ease;
- top:50px;
+ top:65px;
  
 }
 
@@ -49,7 +49,7 @@
     width: 0;
   position: absolute; 
   left: 0px;
-  top :126px;
+  top :70px;
   background-color: #2cb1ba;
   overflow-x: hidden;
   overflow-y: hidden;
