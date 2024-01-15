@@ -24,7 +24,7 @@ const Sidebar = ({ token, setUserToken }) => {
       }
     };
     window.addEventListener("scroll", handlescroll);
-    return removeEventListener("scroll", handlescroll);
+    return () => removeEventListener("scroll", handlescroll);
   }, []);
 
   return (
