@@ -47,25 +47,26 @@
 /* Styles pour la navbar */
 .nav-menu {
     width: 0;
-  position: fixed; 
+  position: absolute; 
   left: 0px;
   top :126px;
   background-color: #2cb1ba;
   overflow-x: hidden;
+  overflow-y: hidden;
   transition: 0.5s ease;
   z-index: 500; /
 }
 
 .nav-menu ul {
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
   margin-top: 30px;
   list-style: none;
   height: 100%;
- 
 }
+
+
 
 
 .nav-menu ul li a {
@@ -90,7 +91,12 @@
   .nav-links {
     display: none;
   }
-}
+  .nav-menu ul::-webkit-scrollbar {
+  display: none;
+  }
+  }
+  
+
 
 @media screen and (min-width: 768px) {
   .nav-menu links {

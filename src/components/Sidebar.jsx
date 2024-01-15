@@ -33,7 +33,7 @@ const Sidebar = ({ token, setUserToken }) => {
       </div>
 
       <div className={`nav-menu ${isOpen ? "open" : ""}`}>
-        <ul>
+        <ul className="open-nav">
           {token ? (
             <div className="auth-buttons">
               <Link to="/dashboard" className="dashboard-button">
