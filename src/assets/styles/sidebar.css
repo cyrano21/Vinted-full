@@ -66,9 +66,6 @@
   height: 100%;
 }
 
-
-
-
 .nav-menu ul li a {
   text-decoration: none;
   color: black;
@@ -76,6 +73,23 @@
 
 .nav-links {
   display: block;
+}
+
+
+
+.open-nav .dashboard-button {
+  background-color: #2cb1ba;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: "Maison Neue";
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  margin-left: 20px;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 @media screen and (max-width: 768px) {

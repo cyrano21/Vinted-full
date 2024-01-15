@@ -43,9 +43,12 @@ const Sidebar = ({ token, setUserToken }) => {
         <ul className="open-nav">
           {token ? (
             <div className="auth-buttons">
-              <Link to="/dashboard" className="dashboard-button">
-                Tableau de bord
-              </Link>
+              <button className="header-button button-login-signup button-signup">
+                <Link to="/dashboard" className="dashboard-button">
+                  Tableau de bord
+                </Link>
+              </button>
+
               <button
                 onClick={handleLogout}
                 className="header-button button-logout "
