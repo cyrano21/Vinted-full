@@ -101,7 +101,8 @@
 }
 
 .button-sold:hover {
-  background-color: #198f97; /* Une teinte plus foncée au survol */
+  background-color: #198f97c5;
+  /* Une teinte plus foncée au survol */
 }
 
 .button-logout {
@@ -111,7 +112,7 @@
 }
 
 .button-logout:hover {
-  background-color: #a4154a; /* Une teinte plus foncée au survol */
+  background-color: #a41549be; /* Une teinte plus foncée au survol */
 }
 
 .dashboard-button:hover {
