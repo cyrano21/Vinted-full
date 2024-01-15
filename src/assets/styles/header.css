@@ -114,21 +114,6 @@
   background-color: #a4154a; /* Une teinte plus foncée au survol */
 }
 
-/* .dashboard-button {
-  background-color: #2cb1ba;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-family: "Maison Neue";
-  font-size: 12px;
-  outline: none;
-  cursor: pointer;
-  margin-left: 20px;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-} */
-
 .dashboard-button:hover {
   background-color: #1e899b;
 }

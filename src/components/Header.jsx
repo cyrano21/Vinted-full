@@ -182,7 +182,10 @@ const Header = ({
         <ul>
           {token ? (
             <div className="auth-buttons">
-              <Link to="/dashboard" className="dashboard-button">
+              <Link
+                to="/dashboard"
+                className="header-button button-login-signup"
+              >
                 Tableau de bord
               </Link>
 
