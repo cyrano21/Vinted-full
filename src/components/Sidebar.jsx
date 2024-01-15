@@ -1,5 +1,5 @@
 import "../assets/styles/sidebar.css";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Sidebar = ({ token, setUserToken }) => {
@@ -11,14 +11,21 @@ const Sidebar = ({ token, setUserToken }) => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  //   const handleLoginClick = () => {
-  //     navigate("/login");
-  //   };
 
   const handleLogout = () => {
     setUserToken(null);
     navigate("/login");
   };
+
+  useEffect(() => {
+    const handlescroll = (e) => {
+      if (window.scrollY > 0) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("scroll", handlescroll);
+    return removeEventListener("scroll", handlescroll);
+  }, []);
 
   return (
     <nav className="navbar">
